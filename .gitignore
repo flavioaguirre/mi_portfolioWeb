@@ -1,2 +1,43 @@
+# Archivos de entorno virtual
 .venv/
+
+
+# Archivos de configuración de Python
+*.pyc
+*.pyo
+*.pyd
 __pycache__/
+
+# Archivos de base de datos SQLite
+*.sqlite3/
+
+
+
+# Archivos de migraciones de Django (pueden volverse obsoletos o volverse a generar)
+.log
+.pot
+.pyc
+
+# Archivos de configuración de IDE y editores
+.vscode/
+.idea/
+
+# Archivos de configuraciones de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de dependencias
+node_modules/
+*.yarn/
+
+# Archivos temporales generados
+*.bak
+*.swp
+*.swo
+
+# Archivos de la carpeta media de Django (subidas de usuario)
+media/
+
+# Archivos generados por Django durante la ejecución
+static/
+

@@ -1,5 +1,3 @@
-// -------------- Scripts 
-
 // Efecto navegador Responsive
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -99,3 +97,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const h1Leyenda = document.querySelector('.h1_leyenda');
     observer.observe(h1Leyenda);
 });
+
+// Slideer
