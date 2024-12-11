@@ -12499,12 +12499,12 @@ a {
     cursor: default;
 }
 
-.navbar-nav .nav-link.active,
+#mainNav .navbar-nav .nav-link.active,
 .navbar-nav .show>.nav-link {
     color:  linear-gradient(to right, #4D6372 0%, 31.578946113586426%, #515768 63.15789222717285%, 81.57894611358643%, #282B40 100%);;
 }
 
-.nav-link-modif {
+#mainNav .nav-link-modif {
     font-family: monospace;
     position: relative;
     padding: .3rem 0 .3rem 0;
@@ -12515,12 +12515,12 @@ a {
     transition: background-size .3s ease-in-out;
 }
 
-.nav-link-modif:hover {
+#mainNav .nav-link-modif:hover {
     background-size: 99% .24rem;
     border-radius: .2rem;
 }
 
-.nav-link::after {
+#mainNav .nav-link::after {
     content: "";
     background-image: linear-gradient(70deg, #0d6efd, #0d6efd);
     position: absolute;
@@ -12533,7 +12533,7 @@ a {
     font-weight: 7000;
 }
 
-.nav-link.active::after {
+#mainNav .nav-link.active::after {
     opacity: 1;
     background-color: linear-gradient(70deg, #0d6efd, #0d6efd);
 }
@@ -12632,7 +12632,7 @@ a {
 
 
 /* Estilos Etiqueta "Section" */
-.page-section {
+section .page-section {
     height: 100vh;
     margin-top: 0;
     padding: 1rem 0;
@@ -12671,7 +12671,7 @@ header .container_leyenda {
     font-family: monospace;
 }
 
-.h1_leyenda {
+header .h1_leyenda {
     color: white;
     display: block;
     white-space: nowrap;
@@ -12682,6 +12682,10 @@ header .container_leyenda {
     overflow: hidden;
     /* box-shadow: 10px 14px 20px black; */
 }
+
+header .h2_leyenda {
+    font-size: 2.5rem;
+} 
 
 @keyframes escribiendo {
     from {
@@ -12695,7 +12699,7 @@ header .container_leyenda {
     }
 }
 
-.btn-descarga-cv {
+header .btn-descarga-cv {
     width: 17%;
     margin-top: 2rem;
     display: inline-block;
@@ -12711,7 +12715,7 @@ header .container_leyenda {
     background: linear-gradient(to right, #051D5B 0%, 27.800831198692322%, #04133A 55.601662397384644%, 77.80083119869232%, #052676 100%);
 }
 
-.btn-descarga-cv::before {
+header .btn-descarga-cv::before {
     content: "";
     position: absolute;
     top: 0;
@@ -12770,18 +12774,19 @@ header .container_leyenda {
 /* -------- Sección: "Sobre mí" */
 #sobre-mi{
     display: flex;
-    padding: 4%;
+    padding: 2%;
 }
 
 #sobre-mi h3{
     font-size: 1.8rem;
     letter-spacing: .4rem;
-    line-height: 3rem;
+    line-height: 2.5rem;
     margin-bottom: 0;
 }
 
 #sobre-mi p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 12%;
 }
 
 #sobre-mi .container-foto-perfil {
@@ -12789,10 +12794,10 @@ header .container_leyenda {
     justify-content: center;
     align-items: center;
     padding: 2%;
-    margin: 0 5% 8% 0;
+    margin: 0 5% 10% 0;
 }
 
-main #sobre-mi .container-foto-perfil .foto-perfil {
+#sobre-mi .container-foto-perfil .foto-perfil {
     border-radius: 50%;
 }
 
@@ -12806,7 +12811,7 @@ main #sobre-mi .container-foto-perfil .foto-perfil {
     overflow: hidden;
     width: 100%;
     height: 100vh;
-    margin-top: -50px;
+    margin-top: -150px;
 }
 
 #proyectos .container-slider-proyectos .container-proyecto {
@@ -12824,10 +12829,11 @@ main #sobre-mi .container-foto-perfil .foto-perfil {
 
 #proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto {
     position: absolute;
-    top: 10%;
-    width: 1140px;
+    padding: 2% 0;
+    top: 5%;
+    width: 75%;
     max-width: 80%;
-    left: 50%;
+    left: 45%;
     padding-right: 30%;
     transform: translateX(-50%);
     box-sizing: border-box;
@@ -12836,45 +12842,50 @@ main #sobre-mi .container-foto-perfil .foto-perfil {
 }
 
 #proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto h2 {
-    font-size: 5em;
+    font-size: 3.8em;
     font-weight: bold;
     line-height: 1.3em;
-    letter-spacing: 1rem;
+    letter-spacing: .6rem;
 }
 
 #proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto p {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 150;
     line-height: 1.7rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto button {
-    margin-top: 2.2rem;
+    margin: 0 0 0 55%;
     width: 20%;
     padding: 1rem;
     border: none;
-    background-color: #0d6efd;
+    background-color: transparent;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
     cursor: pointer;
-    letter-spacing: 2px;
     transition: .4s;
     border-radius: .5rem;
 }
 
 #proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto button:hover {
-    background-color: #0d6efd;
     color: #fff;
+}
+
+#proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto #ver-mas {
+    background-color: #090D26;
+}
+
+#proyectos .container-slider-proyectos .container-proyecto .contenido-proyecto #ver-mas:hover{
+    background: #051D5B;
 }
 
 /* -- Miniaturas */
 #proyectos .container-slider-proyectos .container-miniaturas {
     display: flex;
     padding-bottom: 5%;
-    gap: .3rem;
     position: absolute;
-    bottom: .5rem;
+    bottom: 1.5rem;
     left: 50%;
     width: max-content;
     z-index: 100;
@@ -12909,14 +12920,13 @@ main #sobre-mi .container-foto-perfil .foto-perfil {
 
 #proyectos .container-slider-proyectos .container-btns-slider {
     display: flex;
-    gap: .2rem;
+    gap: 1.2rem;
     position: absolute;
     top: 80%;
     z-index: 100;
     max-width: 30%;
     justify-content: center;
     align-items: center;
-    margin-left: 25%;
 }
 
 #proyectos .container-slider-proyectos .container-btns-slider button {

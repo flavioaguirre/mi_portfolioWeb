@@ -37,7 +37,8 @@
                     <li class="nav-item nav-link-modif active"><a class="nav-link" href="#page-top">Inicio</a></li>
                     <li class="nav-item nav-link-modif"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
                     <li class="nav-item nav-link-modif"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                    <li class="nav-item nav-link-modif"><a class="nav-link" href="#certificaciones">Certificaciones</a></li>
+                    <li class="nav-item nav-link-modif"><a class="nav-link" href="#certificaciones">Certificaciones</a>
+                    </li>
                     <li class="nav-item nav-link-modif"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -51,7 +52,7 @@
     <header class="masthead">
         <div class="container_leyenda">
             <h1 class="h1_leyenda">Flavio Aguirre</h1>
-            <h2 class="h2_leyenda"> Data Scientist</h2>
+            <h2 class="h2_leyenda">Python Developer</h2>
             <span class="leyenda">Desarrollo de Software & Desarrollo Web</span>
             <!-- <a class="btn btn-dark btn-xl mt-2 btn-cv" href="#">Descargar CV</a> -->
             <button class="btn-descarga-cv text-uppercase btn-dark" type="button">
@@ -73,40 +74,58 @@
         <!-- Sección "Sobre mí"-->
         <section class="page-section bg-dark d-f" id="sobre-mi">
             <div class="container row reveal-top text-white mt-4">
-                <h3 class="text-uppercase reveal-top col-md-10">Mi nombre es Flavio Aguirre, 
-                    soy Cientifico de datos y Desarrollador Python certificado.</h2>
-                <hr class="hr-sobre-mi w-50 reveal-top mx-3">
-                <p class="texto-sobre-mi col-md-10 reveal-top">
-                    Oriundo de la ciudad de Posadas, capital de la Provincia de
-                    Misiones,
-                    Argentina.
-                    Cuento con el aval de la
-                    International Business Machines Corporation (IBM) a través de su certificacion online
-                    como Data Scientist.
-                </p>
+                <h3 class="text-uppercase reveal-top col-lg-10">Mi nombre es Flavio Aguirre y
+                    soy Desarrollador Python certificado. Próximo a conseguir
+                    mi certificado profesional como Científico de datos.</h2>
+                    <hr class="hr-sobre-mi w-50 reveal-top mx-3">
+                    <p class="texto-sobre-mi col-md-10 reveal-top">
+                        Oriundo de la ciudad de Posadas, capital de la Provincia de Misiones,
+                        Argentina.
+                        Cuento con el aval de la International Business Machines Corporation (IBM) a través de su
+                        certificacion online como <strong>Python Developer</strong>.
+                        En este momento finalizando mis estudios como
+                        <strong>Data Scientist</strong> en la misma institución.
+                    </p>
             </div>
             <div class="container-foto-perfil reveal-top col-md-2 flex-wrap">
-                <img class="foto-perfil reveal-top" src="{% static 'assets/img/perfil.png' %}"alt="">
+                <img class="foto-perfil reveal-top" src="{% static 'assets/img/perfil.png' %}" alt="">
             </div>
         </section>
 
         <!-- Sección "Mis Proyectos" -->
-        <section class="page-section reveal-top" id="proyectos">
+        <section class="page-section" id="proyectos">
             <!-- Contenedor Slider "Proyectos" -->
             <div class="container-slider-proyectos reveal-top">
                 <!-- Contenido Proyectos -->
                 <!-- proyecto 1 -->
                 <div class="container-proyecto">
-                    <img src="./static/assets/img/portfolio/1.jpg" class="reveal-top" alt="">
+                    <img src="./static/assets/img/portfolio/1.jpg" class="" alt="">
                     <div class="contenido-proyecto reveal-top">
-                        <h2 class="titulo-proyecto text-uppercase mt-2 reveal-top">Proyecto 1</h2>
-                        <p class="descripcion-proyecto reveal-top">
+                        <h2 class="titulo-proyecto text-uppercase reveal-top">Proyecto 1</h2>
+                        <p class="descripcion-proyecto reveal-top col-lg-11">
                             Lorem ipsum dolor sit amet consectetur
                             adipisicing
                             elit. A vitae quae necessitatibus ea soluta, reprehenderit provident sed perspiciatis nobis,
                             inventore accusantium amet architecto distinctio modi iure. Voluptatum enim amet deserunt?
                         </p>
-                        <button class="btn reveal-top" id="ver-mas" type="button">Ver más</button>
+                        <!-- Botones "Ver mas" y "Slider" -->
+                        <button class="btn reveal-top mx-0 mt-3" id="ver-mas" type="button">Ver más</button>
+                        <div class="d-f btn-slider-container w-50">
+                            <button class="btn btn-slider-previus reveal-top mt-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                </svg>
+                            </button>
+                            <button class="btn btn-slider-next reveal-top mx-0 mt-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- proyecto 2 -->
@@ -183,23 +202,6 @@
                             proyecto 6
                         </div>
                     </div>
-                </div>
-                <!-- Botones Slider -->
-                <div class="container-btns-slider reveal-top">
-                    <button class="btn-slider-previus reveal-top">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-                        </svg>
-                    </button>
-                    <button class="btn-slider-next reveal-top">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </section>
