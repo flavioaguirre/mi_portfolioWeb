@@ -68,7 +68,7 @@ ScrollReveal().reveal('.reveal-left', {
     easing: 'ease-out',
     origin: 'left',
     reset: true
-})
+});
 
 ScrollReveal().reveal('.reveal-bottom', {
     distance: '15px',
@@ -76,7 +76,7 @@ ScrollReveal().reveal('.reveal-bottom', {
     easing: 'ease-out',
     origin: 'bottom',
     reset: true
-})
+});
 
 
 // Efecto maquina de escribir infinito "Header"
@@ -99,15 +99,56 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Filtro de proyectos
+// Seccion proyectos
+// Modal
+const modal = document.querySelector('.modal');
+        const overlay = document.querySelector('.overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalTechnologies = document.getElementById('modal-technologies');
+        const githubLink = document.getElementById('github-link');
+        const closeModalButton = document.querySelector('.close-btn');
+
+        document.querySelectorAll('.project').forEach(project => {
+            project.addEventListener('click', () => {
+                modalTitle.textContent = project.querySelector('h3').textContent;
+                modalDescription.textContent = project.getAttribute('data-description');
+
+                // Generate bubbles for technologies
+                modalTechnologies.innerHTML = '';
+                const technologies = project.getAttribute('data-technologies').split(', ');
+                technologies.forEach(tech => {
+                    const bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    bubble.innerHTML = `<i class="fas fa-code"></i> ${tech}`;
+                    modalTechnologies.appendChild(bubble);
+                });
+
+                // Set GitHub link
+                githubLink.href = project.getAttribute('data-github');
+
+                modal.style.display = 'block';
+                overlay.style.display = 'block';
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        overlay.addEventListener('click', closeModal);
+        closeModalButton.addEventListener('click', closeModal);
+
+// filtro botones
 document.querySelectorAll('.filter-buttons button').forEach(button => {
     button.addEventListener('click', () => {
         const category = button.getAttribute('data-category');
         document.querySelectorAll('.project').forEach(project => {
             if (category === 'all' || project.getAttribute('data-category') === category) {
-                project.classList.remove('hidden');
+                project.style.display = 'block';
             } else {
-                project.classList.add('hidden');
+                project.style.display = 'none';
             }
         });
     });
