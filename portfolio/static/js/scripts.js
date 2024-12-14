@@ -98,4 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(h1Leyenda);
 });
 
-// Slideer
+
+// Filtro de proyectos
+document.querySelectorAll('.filter-buttons button').forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        document.querySelectorAll('.project').forEach(project => {
+            if (category === 'all' || project.getAttribute('data-category') === category) {
+                project.classList.remove('hidden');
+            } else {
+                project.classList.add('hidden');
+            }
+        });
+    });
+});
