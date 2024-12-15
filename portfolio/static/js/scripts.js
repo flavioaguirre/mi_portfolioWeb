@@ -55,7 +55,7 @@ ScrollReveal().reveal('.reveal-top', {
 });
 
 ScrollReveal().reveal('.reveal-right', {
-    distance: '15px',
+    distance: '70px',
     duration: 1000,
     easing: 'ease-out',
     origin: 'right',
@@ -63,7 +63,7 @@ ScrollReveal().reveal('.reveal-right', {
 });
 
 ScrollReveal().reveal('.reveal-left', {
-    distance: '15px',
+    distance: '70px',
     duration: 1000,
     easing: 'ease-out',
     origin: 'left',
@@ -106,43 +106,43 @@ document.addEventListener('DOMContentLoaded', () => {
 // Seccion proyectos
 // Modal
 const modal = document.querySelector('.modal');
-        const overlay = document.querySelector('.overlay');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
-        const modalTechnologies = document.getElementById('modal-technologies');
-        const githubLink = document.getElementById('github-link');
-        const closeModalButton = document.querySelector('.close-btn');
+const overlay = document.querySelector('.overlay');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalTechnologies = document.getElementById('modal-technologies');
+const githubLink = document.getElementById('github-link');
+const closeModalButton = document.querySelector('.close-btn');
 
-        document.querySelectorAll('.project').forEach(project => {
-            project.addEventListener('click', () => {
-                modalTitle.textContent = project.querySelector('h3').textContent;
-                modalDescription.textContent = project.getAttribute('data-description');
+document.querySelectorAll('.project').forEach(project => {
+    project.addEventListener('click', () => {
+        modalTitle.textContent = project.querySelector('h3').textContent;
+        modalDescription.textContent = project.getAttribute('data-description');
 
-                // Generate bubbles for technologies
-                modalTechnologies.innerHTML = '';
-                const technologies = project.getAttribute('data-technologies').split(', ');
-                technologies.forEach(tech => {
-                    const bubble = document.createElement('div');
-                    bubble.classList.add('bubble');
-                    bubble.innerHTML = `<i class="fas fa-code"></i> ${tech}`;
-                    modalTechnologies.appendChild(bubble);
-                });
-
-                // Set GitHub link
-                githubLink.href = project.getAttribute('data-github');
-
-                modal.style.display = 'block';
-                overlay.style.display = 'block';
-            });
+        // Generate bubbles for technologies
+        modalTechnologies.innerHTML = '';
+        const technologies = project.getAttribute('data-technologies').split(', ');
+        technologies.forEach(tech => {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.innerHTML = `<i class="fas fa-code"></i> ${tech}`;
+            modalTechnologies.appendChild(bubble);
         });
 
-        function closeModal() {
-            modal.style.display = 'none';
-            overlay.style.display = 'none';
-        }
+        // Set GitHub link
+        githubLink.href = project.getAttribute('data-github');
 
-        overlay.addEventListener('click', closeModal);
-        closeModalButton.addEventListener('click', closeModal);
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+    });
+});
+
+function closeModal() {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+}
+
+overlay.addEventListener('click', closeModal);
+closeModalButton.addEventListener('click', closeModal);
 
 // filtro botones
 document.querySelectorAll('.filter-buttons button').forEach(button => {
@@ -157,3 +157,4 @@ document.querySelectorAll('.filter-buttons button').forEach(button => {
         });
     });
 });
+
