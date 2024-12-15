@@ -1,16 +1,5 @@
 @charset "UTF-8";
 
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -12675,27 +12664,30 @@ header .h1_leyenda {
     display: block;
     white-space: nowrap;
     font-size: 3.8rem;
-    border-right: 4px solid;
     width: 11ch;
     animation: escribiendo 1.3s steps(11), blink .5s infinite step-end;
     overflow: hidden;
     /* box-shadow: 10px 14px 20px black; */
 }
 
-header .h2_leyenda {
-    font-size: 2.5rem;
-} 
-
-@keyframes escribiendo {
+@keyframes typing {
     from {
-        width: 0;
+        width: 0; /* Comienza sin ancho */
+    }
+    to {
+        width: 100%; /* Solo hasta el ancho del texto */
     }
 }
 
 @keyframes blink {
     50% {
-        border-color: transparent;
+        border-color: transparent; /* Hace desaparecer el cursor en el 50% */
     }
+}
+
+
+header .h2_leyenda {
+    font-size: 2.5rem;
 }
 
 header .btn-descarga-cv {
@@ -12771,45 +12763,133 @@ header .btn-descarga-cv::before {
 /* -- Fin "Inicio" */
 
 /* -------- Sección: "Sobre mí" */
-#sobre-mi{
+
+#sobre-mi {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+    color: #e2e3e5;
     display: flex;
-    padding: 2%;
-    background: #222126;
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-#sobre-mi .container {
-    padding: 3%;
+#sobre-mi .container-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
-#sobre-mi h3{
-    font-size: 1.2rem;
-    letter-spacing: .4rem;
-    line-height: 2.5rem;
-    margin-bottom: .7rem;
+#sobre-mi .contenido-sobre-mi {
+    margin-bottom: 5%;
+    padding: .5rem;
+    flex: 1; /* Toma todo el espacio disponible */
 }
 
-#sobre-mi p {
-    font-size: 1rem;
-    margin-bottom: 20%;
-}
-
-#sobre-mi .container-foto-perfil {
+#sobre-mi .container-img {
+    flex: 0 0 auto; /* Evita que la imagen se estire */
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2%;
-    margin: 0 5% 10% 0;
-    overflow: hidden;
+    align-items: center; /* Centra la imagen dentro de su contenedor */
+    border-radius: 100%;
+    width: 30%;
+    height: 50%;
+    margin-bottom: 3%;
 }
 
-#sobre-mi .container-foto-perfil .foto-perfil {
+#sobre-mi .container-img img {
+    max-width: 100%;
+    max-height: 400px; /* Limita la altura máxima */
+    border-radius: 10px; /* Borde redondeado opcional */
+    object-fit: cover; /* Asegura que la imagen mantenga proporción */
+    margin-bottom: 40%;
+    width: 20rem;
+    
+}
+
+
+#sobre-mi .contenido-sobre-mi h3 {
+    padding: .5rem;
+    color: #e2e3e5;
+    margin: 0 0 2% 2%;
+    line-height: 2.5rem;
+}
+
+#sobre-mi .contenido-sobre-mi .description {
+    padding: 2%;
+    font-size: 1rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+#sobre-mi .contenido-sobre-mi .bubble-container {
     display: flex;
     flex-wrap: wrap;
-    border-radius: 99%;
-    height: 75%;
-    padding: 5%;
-    margin-bottom: 45%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#sobre-mi .contenido-sobre-mi .bubble {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: #007BFF;
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    border-radius: 50px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;
+    cursor: default;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#sobre-mi .contenido-sobre-mi .bubble:hover {
+    background-color: rgba(0, 123, 255, 0.2);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    #sobre-mi .container-contenido {
+        margin: 0 0 0 0;
+        flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+        align-items: center; /* Centra los elementos en el eje vertical */
+        gap: 1rem; /* Reduce el espacio entre los elementos */
+    }
+
+    #sobre-mi .container-img {
+        order: -1; /* Mueve la imagen al principio del contenedor */
+        width: 100%; /* La imagen ocupará todo el ancho */
+        text-align: center; /* Centra la imagen dentro del contenedor */
+    }
+
+    #sobre-mi .container-img img {
+        max-height: 200px; /* Reduce el tamaño máximo de la imagen */
+        max-width: 80%; /* Ajusta el ancho relativo a su contenedor */
+    }
+
+    #sobre-mi .contenido-sobre-mi {
+        width: 100%; /* El contenido ocupa el 100% del ancho disponible */
+        text-align: center; /* Centra el texto para una mejor estética en móviles */
+    }
+
+    #sobre-mi .contenido-sobre-mi .description {
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente para dispositivos más pequeños */
+        padding: 1rem; /* Reduce el padding para mayor espacio */
+    }
+
+    #sobre-mi .contenido-sobre-mi .bubble {
+        font-size: 0.8rem; /* Reduce el tamaño de las burbujas en móviles */
+        padding: 6px 12px; /* Reduce el padding dentro de las burbujas */
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .bubble {
+        font-size: 0.8rem;
+    }
 }
 
 /* -- Fin Sección "Sobre mí" */

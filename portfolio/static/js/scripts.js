@@ -84,12 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             const h1 = entry.target;
+
             if (entry.isIntersecting) {
-                h1.classList.remove('hidden');
-                h1.classList.add('h1_leyenda');
+                h1.classList.remove('hidden'); // Elimina clase oculta si está presente
+                h1.classList.remove('animate'); // Reinicia la animación quitándola
+                void h1.offsetWidth; // Forzar reflujo para reiniciar animación
+                h1.classList.add('animate'); // Agrega clase para activar animación
             } else {
-                h1.classList.remove('h1_leyenda');
-                h1.classList.add('hidden');
+                h1.classList.remove('animate'); // Detiene la animación al salir
+                h1.classList.add('hidden'); // Vuelve a ocultar el texto
             }
         });
     }, { threshold: 0.5 });
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const h1Leyenda = document.querySelector('.h1_leyenda');
     observer.observe(h1Leyenda);
 });
+
 
 
 // Seccion proyectos

@@ -51,7 +51,7 @@
     <!-- Inicio -->
     <header class="masthead">
         <div class="container_leyenda">
-            <h1 class="h1_leyenda">Flavio Aguirre</h1>
+            <h1 class="h1_leyenda hidden">Flavio Aguirre</h1>
             <h2 class="h2_leyenda">Python Developer</h2>
             <span class="leyenda">Ciencia de Datos • Desarrollo de Software • Desarrollo Web</span>
             <!-- <a class="btn btn-dark btn-xl mt-2 btn-cv" href="#">Descargar CV</a> -->
@@ -72,29 +72,61 @@
     <main class="contenedor-main">
 
         <!-- Sección "Sobre mí"-->
-        <section class="page-section bg-dark d-f" id="sobre-mi">
-            <div class="container row reveal-top text-white mt-4">
-                <h3 class="text-uppercase reveal-top col-lg-10">Mi nombre es Flavio Aguirre y
-                    soy Desarrollador Python certificado. </h3>
-                <hr class="hr-sobre-mi w-50 reveal-top mx-3">
-                <p class="texto-sobre-mi col-md-10 reveal-top">
-                    Oriundo de la ciudad de Posadas, capital de la Provincia de Misiones,
-                    Argentina.
-                    Cuento con el aval de la International Business Machines Corporation (IBM) a través de su
-                    certificacion online como <strong>Python Developer</strong>.
-                    En este momento estoy finalizando mis estudios como
-                    <strong>Data Scientist</strong> en la misma institución.
-                </p>
-            </div>
-            <div class="container-foto-perfil reveal-top col-md-2">
-                <img class="foto-perfil reveal-top" src="{% static 'assets/img/perfil.png' %}" alt="">
+        <section class="sobre-mi bg-dark" id="sobre-mi">
+            <div class="container-contenido d-f">
+                <div class="contenido-sobre-mi col-lg-8 reveal-top">
+                    <h3 class="leyenda-sobre-mi">
+                        Mi nombre es Flavio Aguirre y soy 
+                        <strong>desarrollador Python Certificado</strong>.
+                    </h3>
+                    <hr class="w-75 mx-3">
+                    <p class="description">
+                        <strong>Habilidades técnicas:</strong>
+                        <span class="bubble-container" id="technical-skills">
+                            <!-- Burbujas de habilidades técnicas -->
+                            <span class="bubble">Python</span>
+                            <span class="bubble">SQL</span>
+                            <span class="bubble">Pandas</span>
+                            <span class="bubble">Numpy</span>
+                            <span class="bubble">Matplotlib</span>
+                            <span class="bubble">Seaborn</span>
+                            <span class="bubble">Jupyter Notebooks</span>
+                            <span class="bubble">Git</span>
+                            <span class="bubble">Github</span>
+                            <span class="bubble">Flet</span>
+                            <span class="bubble">Django</span>
+                            <span class="bubble">Web Scraping</span>
+                            <span class="bubble">HTML</span>
+                            <span class="bubble">CSS</span>
+                            <span class="bubble">JavaScript</span>
+                            <span class="bubble">Matemáticas</span>
+                        </span>
+                        <br>
+                        <strong>Habilidades blandas:</strong>
+                        <span class="bubble-container" id="soft-skills">
+                            <!-- Burbujas de habilidades blandas -->
+                            <span class="bubble">Comunicación</span>
+                            <span class="bubble">Trabajo en equipo</span>
+                            <span class="bubble">Resolución de problemas</span>
+                            <span class="bubble">Autodidácta</span>
+                            <span class="bubble">Predispocición a proyectos</span>
+                            <span class="bubble">Líder</span>
+                            <span class="bubble">Empático</span>
+                            <span class="bubble">Multidisciplinario</span>
+                        </span>
+                    </p>
+                </div>
+                <div class="container-img col-lg-4 reveal-top">
+                    <img src="{% static './assets/img/about/foto-perfil2.png' %}" alt="Foto de perfil" class="img-perfil">
+                </div>
             </div>
         </section>
+        
 
         <!-- Sección "Mis Proyectos" -->
-        <section class="page-section" id="proyectos">
+        <section class="page-section proyectos" id="proyectos">
             <div class="portfolio reveal-top">
-                <h2>Los trabajos que puedo realizar desde cualquier punto de su desarrollo o despliegue.</h2>
+                <h2>Estos son algunos de los trabajos que puedo realizar</h2>
                 <div class="filter-buttons">
                     <button data-category="all">Todos</button>
                     <button data-category="web">Desarrollo Web</button>
@@ -134,7 +166,6 @@
                     </div>
                 </div>
             </div>
-        
             <div class="overlay"></div>
             <div class="modal">
                 <button class="close-btn mt-2 bg-dark">&times;</button>
