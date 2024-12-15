@@ -12543,22 +12543,13 @@ a:hover {
     }
 
     #mainNav .container {
-        margin-left: 0;
-        margin-right: 10%;
-    }
-
-    #mainNav .container .container-redes{
-        margin-left: 10%;
+        justify-content: center;
+        margin-right: 7%;
     }
 
     #mainNav .navbar-brand {
         font-size: 1.5em;
         transition: font-size 0.3s ease-in-out;
-    }
-
-    #mainNav .navbar-brand img {
-        height: 2rem;
-        transition: height 0.3s ease-in-out;
     }
 
     #mainNav.navbar-shrink {
@@ -12584,40 +12575,6 @@ a:hover {
 
     #mainNav .navbar-nav .nav-item:last-child {
         margin-right: 0;
-    }
-
-    #mainNav .link-github {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: .3rem;
-    }
-
-    #mainNav .link-linkedin {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: .3rem;
-    }
-
-    #mainNav .link-linkedin .borde-linkedin {
-        border-radius: .3rem;
-    }
-
-    #mainNav .link-github,
-    #mainNav .link-linkedin {
-        transition: .5s, color .10s;
-        -webkit-transition: .5s, color .10s;   
-        -moz-transition: .5s, color .10s;
-    }
-
-    #mainNav .link-github:hover,
-    #mainNav .link-linkedin:hover {
-        box-shadow: 0 8px 8px 0 #000000, 0 8px 8px 0 #000000;
-        transform: translate(0px, 2px);
-        -webkit-transform: translate(0px, 2px);
-        -moz-transform: translate(0px, 2px);
-        border-radius: .5rem;
     }
 
 }
@@ -12652,8 +12609,7 @@ header.masthead {
     border: none;
 }
 
-header .container_leyenda {
-    margin-left: 8%;
+header .leyenda-container {
     padding: 3rem;
     color: #138AF2;
     display: flex;
@@ -12661,84 +12617,38 @@ header .container_leyenda {
     width: 100%;
     line-height: 3.5rem;
     font-family: monospace;
+    justify-content: center;
+    align-items: center;
 }
 
-header .h1_leyenda {
-    color: white;
-    display: block;
-    white-space: nowrap;
-    font-size: 3.8rem;
-    width: 11ch;
-    animation: escribiendo 1.3s steps(11), blink .5s infinite step-end;
-    overflow: hidden;
-    /* box-shadow: 10px 14px 20px black; */
+header .leyenda-container h1 {
+    font-size: 3rem;
+    color: #eee;
 }
 
-@keyframes typing {
-    from {
-        width: 0; /* Comienza sin ancho */
-    }
-    to {
-        width: 100%; /* Solo hasta el ancho del texto */
-    }
+header .leyenda-container button {
+    max-width: 100%;
+    width: 20%;
+    background: rgba(255, 255, 255, 0.09);
+    border-color: #0056b3;
+    color: #0056b3;
 }
 
-@keyframes blink {
-    50% {
-        border-color: transparent; /* Hace desaparecer el cursor en el 50% */
-    }
+header .leyenda-container button:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: #0056b3;
 }
 
-
-header .h2_leyenda {
-    font-size: 2.5rem;
+header .leyenda-container .redes-container{
+    padding: 2%;
+    font-size: 1.5rem;
 }
 
-header .btn-descarga-cv {
-    width: 17%;
-    margin-top: 2rem;
-    display: inline-block;
-    padding: .8rem 1.2rem;
-    position: relative;
+header .leyenda-container .redes-container .redes:hover {
+    transform: scale(1.2);
+    transition: all 0.4s ease-in-out;
     cursor: pointer;
-    border: none;
-    font-family: monospace;
-    font-size: 1rem;
-    line-height: 1.2;
-    color: #fff;
-    border-radius: 1rem;
-    background: linear-gradient(to right, #051D5B 0%, 27.800831198692322%, #04133A 55.601662397384644%, 77.80083119869232%, #052676 100%);
-}
-
-header .btn-descarga-cv::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background:
-        /* Gradient in Hex */
-        linear-gradient(to right, #051D5B 0%, 27.800831198692322%, #04133A 55.601662397384644%, 77.80083119869232%, #052676 100%);
-    background-size: 800%;
-    border-radius: .1rem;
-    filter: blur(.5rem);
-    animation: glowing 20s infinite;
-}
-
-@keyframes glowing {
-    0% {
-        background-position: 400% 400%;
-    }
-
-    50% {
-        background-position: 400% 800%;
-    }
-
-    100% {
-        background-position: 600% 0;
-    }
+    color: #0056b3;
 }
 
 @media (min-width: 768px) {

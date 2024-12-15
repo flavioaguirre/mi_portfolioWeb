@@ -50,24 +50,33 @@
 
     <!-- Inicio -->
     <header class="masthead">
-        <div class="container_leyenda">
-            <h1 class="h1_leyenda hidden">Flavio Aguirre</h1>
-            <h2 class="h2_leyenda">Python Developer</h2>
-            <span class="leyenda">Ciencia de Datos • Desarrollo de Software • Desarrollo Web</span>
-            <!-- <a class="btn btn-dark btn-xl mt-2 btn-cv" href="#">Descargar CV</a> -->
-            <button class="btn-descarga-cv text-uppercase btn-dark" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-download" viewBox="0 0 16 16">
-                    <path
-                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                    <path
-                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+        <div class="container leyenda-container py-4 reveal-top">
+            <!-- Título principal oculto para fines de SEO -->
+            <h1 class="h1-leyenda">Flavio Aguirre</h1>
+            <!-- <hr class="w-100"> -->
+            <!-- Subtítulo visible -->
+            <h2 class="h2-leyenda fs-3">Python Developer</h2>
+            <!-- Leyenda descriptiva -->
+            <p class="leyenda text-muted">
+                Ciencia de Datos • Desarrollo de Software • Desarrollo Web
+            </p>
+            <!-- Botón para descargar el CV -->
+            <button onclick="downloadPDF()" class="btn btn-lg mt-3" id="descarga-cv" aria-label="Descargar CV">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-download me-2" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
                 </svg>
                 Descargar CV
             </button>
+            <div class="redes-container reveal-top">
+                <a href="https://github.com/flavioaguirre" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github redes"></i></a>
+                <a href="https://www.linkedin.com/in/flavio-aguirre-12784a252/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin redes"></i></a>
+                <!-- <a href="https://www.instagram.com/flavioaguirre13/?hl=es" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a> -->
+            </div>
         </div>
     </header>
-
+    
     <!-- Contenido Principal -->
     <main class="contenedor-main">
 

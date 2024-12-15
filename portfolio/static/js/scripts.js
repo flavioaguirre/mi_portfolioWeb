@@ -44,7 +44,6 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 });
 
-
 // Inicializar ScrollReveal
 ScrollReveal().reveal('.reveal-top', {
     distance: '25px',
@@ -77,31 +76,6 @@ ScrollReveal().reveal('.reveal-bottom', {
     origin: 'bottom',
     reset: true
 });
-
-
-// Efecto maquina de escribir infinito "Header"
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            const h1 = entry.target;
-
-            if (entry.isIntersecting) {
-                h1.classList.remove('hidden'); // Elimina clase oculta si está presente
-                h1.classList.remove('animate'); // Reinicia la animación quitándola
-                void h1.offsetWidth; // Forzar reflujo para reiniciar animación
-                h1.classList.add('animate'); // Agrega clase para activar animación
-            } else {
-                h1.classList.remove('animate'); // Detiene la animación al salir
-                h1.classList.add('hidden'); // Vuelve a ocultar el texto
-            }
-        });
-    }, { threshold: 0.5 });
-
-    const h1Leyenda = document.querySelector('.h1_leyenda');
-    observer.observe(h1Leyenda);
-});
-
-
 
 // Seccion proyectos
 // Modal
@@ -144,7 +118,7 @@ function closeModal() {
 overlay.addEventListener('click', closeModal);
 closeModalButton.addEventListener('click', closeModal);
 
-// filtro botones
+// filtro botones 'Proyectos'
 document.querySelectorAll('.filter-buttons button').forEach(button => {
     button.addEventListener('click', () => {
         const category = button.getAttribute('data-category');
@@ -158,3 +132,10 @@ document.querySelectorAll('.filter-buttons button').forEach(button => {
     });
 });
 
+// Descarga CV
+function downloadPDF() {
+    const link = document.createElement('a');
+    link.href = '../static/assets/img/cv/flavio+aguirre_cv.pdf'; // Cambia por la ruta del archivo PDF
+    link.download = 'flavio+aguirre_cv.pdf'; // Nombre del archivo al descargar
+    link.click();
+}
