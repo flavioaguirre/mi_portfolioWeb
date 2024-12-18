@@ -84,8 +84,8 @@ const overlay = document.querySelector('.overlay');
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
 const modalTechnologies = document.getElementById('modal-technologies');
-const githubLink = document.getElementById('github-link');
 const closeModalButton = document.querySelector('.close-btn');
+const githubLink = document.getElementById('github-link');
 
 document.querySelectorAll('.project').forEach(project => {
     project.addEventListener('click', () => {
@@ -133,9 +133,28 @@ document.querySelectorAll('.filter-buttons button').forEach(button => {
 });
 
 // Descarga CV
-function downloadPDF() {
-    const link = document.createElement('a');
-    link.href = '../static/assets/img/cv/flavio+aguirre_cv.pdf'; // Cambia por la ruta del archivo PDF
-    link.download = 'flavio+aguirre_cv.pdf'; // Nombre del archivo al descargar
-    link.click();
+function handleButtonClick() {
+    const label = document.querySelector('.label');
+    const checkbox = document.getElementById('downloadCheckbox');
+    const openText = document.getElementById('openText');
+
+    // Verificar el estado actual
+    if (label.getAttribute('data-state') === 'download') {
+        // Iniciar descarga
+        const link = document.createElement('a');
+        link.href = '../static/assets/img/cv/flavio+aguirre_cv.pdf';
+        link.download = 'flavio+aguirre_cv.pdf';
+        link.click();
+
+        // Sincronizar con la animación (simulando un tiempo de descarga)
+        setTimeout(() => {
+            // Cambiar estado a "open"
+            label.setAttribute('data-state', 'open');
+            openText.style.display = 'block';
+            checkbox.checked = false; // Reinicia el checkbox visualmente
+        }, 20000); // Duración de la animación (3.5s)
+    } else {
+        // Si ya está en estado "open", no hacer nada más
+        checkbox.checked = false; // Reinicia el checkbox visualmente
+    }
 }

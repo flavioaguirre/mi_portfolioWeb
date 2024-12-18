@@ -42,41 +42,47 @@
                     <li class="nav-item nav-link-modif"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
-            <!-- Insignia linkedin
-            <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="flavio-aguirre-12784a252" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ar.linkedin.com/in/flavio-aguirre-12784a252?trk=profile-badge"></a></div> 
-            </div> -->
         </div>
     </nav>
 
     <!-- Inicio -->
     <header class="masthead">
         <div class="container leyenda-container py-4 reveal-top">
-            <!-- Título principal oculto para fines de SEO -->
             <h1 class="h1-leyenda">Flavio Aguirre</h1>
-            <!-- <hr class="w-100"> -->
-            <!-- Subtítulo visible -->
             <h2 class="h2-leyenda fs-3">Python Developer</h2>
-            <!-- Leyenda descriptiva -->
             <p class="leyenda text-muted">
                 Ciencia de Datos • Desarrollo de Software • Desarrollo Web
             </p>
-            <!-- Botón para descargar el CV -->
-            <button onclick="downloadPDF()" class="btn btn-lg mt-3" id="descarga-cv" aria-label="Descargar CV">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-download me-2" viewBox="0 0 16 16" aria-hidden="true">
-                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-                </svg>
-                Descargar CV
-            </button>
+            <div class="leyenda-btn-descarga-cv">
+                <label class="label" data-state="download">
+                    <input type="checkbox" class="input" id="downloadCheckbox" onclick="handleButtonClick()">
+                    <span class="circle">
+                        <svg class="svg-btn-descarga" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            fill="currentColor" class="bi bi-download me-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                            <path
+                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                        </svg>
+                        <div class="square"></div>
+                    </span>
+                    <p class="title">Descargar CV</p>
+                    <p class="title" id="openText">
+                        <a href='../static/assets/img/cv/flavio+aguirre_cv.pdf' target="_blank"
+                            rel="noopener noreferrer">Abrir</a>
+                    </p>
+                </label>
+            </div>
             <div class="redes-container reveal-top">
-                <a href="https://github.com/flavioaguirre" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github redes"></i></a>
-                <a href="https://www.linkedin.com/in/flavio-aguirre-12784a252/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin redes"></i></a>
+                <a href="https://github.com/flavioaguirre" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-github redes"></i></a>
+                <a href="https://www.linkedin.com/in/flavio-aguirre-12784a252/" target="_blank"
+                    rel="noopener noreferrer"><i class="fa-brands fa-linkedin redes"></i></a>
                 <!-- <a href="https://www.instagram.com/flavioaguirre13/?hl=es" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a> -->
             </div>
         </div>
     </header>
-    
+
     <!-- Contenido Principal -->
     <main class="contenedor-main">
 
@@ -85,7 +91,7 @@
             <div class="container-contenido d-f">
                 <div class="contenido-sobre-mi col-lg-8 reveal-top">
                     <h3 class="leyenda-sobre-mi">
-                        Mi nombre es Flavio Aguirre y soy 
+                        Mi nombre es Flavio Aguirre y soy
                         <strong>desarrollador Python Certificado</strong>.
                     </h3>
                     <hr class="w-75 mx-3">
@@ -126,11 +132,12 @@
                     </p>
                 </div>
                 <div class="container-img col-lg-4 reveal-top">
-                    <img src="{% static './assets/img/about/foto-perfil2.png' %}" alt="Foto de perfil" class="img-perfil">
+                    <img src="{% static './assets/img/about/foto-perfil2.png' %}" alt="Foto de perfil"
+                        class="img-perfil">
                 </div>
             </div>
         </section>
-        
+
 
         <!-- Sección "Mis Proyectos" -->
         <section class="page-section proyectos" id="proyectos">
@@ -144,32 +151,44 @@
                 </div>
                 <div class="grid">
                     <!-- Proyecto 1 -->
-                    <div class="project" data-category="web" data-description="A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript." data-technologies="HTML, CSS, JavaScript">
+                    <div class="project" data-category="web"
+                        data-description="A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript."
+                        data-technologies="HTML, CSS, JavaScript">
                         <img src="{% static './assets/img/portfolio/1.jpg' %}" alt="Project">
                         <h3>Web Project 1</h3>
                     </div>
                     <!-- Proyecto 2 -->
-                    <div class="project" data-category="design" data-description="A graphic design project focusing on branding and logos." data-technologies="Photoshop, Illustrator">
+                    <div class="project" data-category="design"
+                        data-description="A graphic design project focusing on branding and logos."
+                        data-technologies="Photoshop, Illustrator">
                         <img src="{% static './assets/img/portfolio/2.jpg' %}" alt="Project">
                         <h3>Design Project 1</h3>
                     </div>
                     <!-- Proyecto 3 -->
-                    <div class="project" data-category="data" data-description="A data analysis project using Python and Pandas." data-technologies="Python, Pandas">
+                    <div class="project" data-category="data"
+                        data-description="A data analysis project using Python and Pandas."
+                        data-technologies="Python, Pandas">
                         <img src="{% static './assets/img/portfolio/3.jpg' %}" alt="Project">
                         <h3>Data Science Project 1</h3>
                     </div>
                     <!-- Proyecto 4 -->
-                    <div class="project" data-category="web" data-description="An advanced web application using React and Node.js." data-technologies="React, Node.js">
+                    <div class="project" data-category="web"
+                        data-description="An advanced web application using React and Node.js."
+                        data-technologies="React, Node.js">
                         <img src="{% static './assets/img/portfolio/4.jpg' %}" alt="Project">
                         <h3>Web Project 2</h3>
                     </div>
                     <!-- Proyecto 5 -->
-                    <div class="project" data-category="design" data-description="A creative design project for mobile applications." data-technologies="Figma, Sketch">
+                    <div class="project" data-category="design"
+                        data-description="A creative design project for mobile applications."
+                        data-technologies="Figma, Sketch">
                         <img src="{% static './assets/img/portfolio/5.jpg' %}" alt="Project">
                         <h3>Design Project 2</h3>
                     </div>
                     <!-- Proyecto 6 -->
-                    <div class="project" data-category="data" data-description="A machine learning project focusing on predictive modeling." data-technologies="Python, scikit-learn">
+                    <div class="project" data-category="data"
+                        data-description="A machine learning project focusing on predictive modeling."
+                        data-technologies="Python, scikit-learn">
                         <img src="{% static './assets/img/portfolio/6.jpg' %}" alt="Project">
                         <h3>Data Science Project 2</h3>
                     </div>
@@ -200,10 +219,13 @@
                         <div class='content'>
                             <h4>Desarrollo web</h4>
                             <p>
-                                Plataforma educativa: <a href="https://www.coderhouse.com/ar/" target="_blank">CoderHouse</a><br>
+                                Plataforma educativa: <a href="https://www.coderhouse.com/ar/"
+                                    target="_blank">CoderHouse</a><br>
                                 Fecha de obtención: 3/10/22
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coderhouse.com/ar/certificados/635e805f550fa6000e449e67?lang=es" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coderhouse.com/ar/certificados/635e805f550fa6000e449e67?lang=es"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                     <!-- Python Developer Web -->
@@ -211,10 +233,13 @@
                         <div class='content d-f'>
                             <h4>Python orientado al desarrollo web</h4>
                             <p>
-                                Plataforma educativa: <a href="https://www.coderhouse.com/ar/" target="_blank">CoderHouse</a><br>
+                                Plataforma educativa: <a href="https://www.coderhouse.com/ar/"
+                                    target="_blank">CoderHouse</a><br>
                                 Fecha de obtención: 8/11/23
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coderhouse.com/ar/certificados/65866718714341e821f68790?lang=es" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coderhouse.com/ar/certificados/65866718714341e821f68790?lang=es"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                     <!-- Python Developer Data Science -->
@@ -222,10 +247,14 @@
                         <div class='content'>
                             <h4>Python para ciencia de datos, inteligencia artificial y desarrollo</h4>
                             <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/" target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/" target="_blank">IBM</a><br>
+                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
+                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
+                                    target="_blank">IBM</a><br>
                                 <strong>Fecha de obtención</strong>: 26/5/24
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coursera.org/account/accomplishments/verify/WB3APF9J97V7" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coursera.org/account/accomplishments/verify/WB3APF9J97V7"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                     <!-- Fundamentos de la ciencia de datos -->
@@ -233,10 +262,14 @@
                         <div class='content'>
                             <h4>Fundamentos de la ciencia de datos</h4>
                             <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/" target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/" target="_blank">IBM</a><br>
+                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
+                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
+                                    target="_blank">IBM</a><br>
                                 <strong>Fecha de obtención</strong>: 6/9/24
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coursera.org/account/accomplishments/verify/BABA835H4QTO" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coursera.org/account/accomplishments/verify/BABA835H4QTO"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                     <!-- Herramientas para la ciencia de datos -->
@@ -244,10 +277,14 @@
                         <div class='content'>
                             <h4>Herramientas para la ciencia de datos</h4>
                             <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/" target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/" target="_blank">IBM</a><br>
+                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
+                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
+                                    target="_blank">IBM</a><br>
                                 <strong>Fecha de obtención</strong>: 18/10/24
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coursera.org/account/accomplishments/verify/EI10CBA8K9L0" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coursera.org/account/accomplishments/verify/EI10CBA8K9L0"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                     <!-- Metodología para la ciencia de datos -->
@@ -255,10 +292,14 @@
                         <div class='content'>
                             <h4>Metodología para la ciencia de datos</h4>
                             <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/" target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/" target="_blank">IBM</a><br>
+                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
+                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
+                                    target="_blank">IBM</a><br>
                                 <strong>Fecha de obtención</strong>: 25/10/24
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coursera.org/account/accomplishments/verify/SOL4RNIBR330" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coursera.org/account/accomplishments/verify/SOL4RNIBR330"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                     <!-- SQL y base de datos con python para la ciencia de datos -->
@@ -266,21 +307,72 @@
                         <div class='content'>
                             <h4>Bases de datos y SQL para la ciencia de los datos con Python</h4>
                             <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/" target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/" target="_blank">IBM</a><br>
+                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
+                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
+                                    target="_blank">IBM</a><br>
                                 <strong>Fecha de obtención</strong>: 14/11/24
                             </p>
-                            <button class="bubble text-center"><a href="https://www.coursera.org/account/accomplishments/verify/4266K31D0PNA" target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
+                            <button class="bubble text-center"><a
+                                    href="https://www.coursera.org/account/accomplishments/verify/4266K31D0PNA"
+                                    target="_blank" rel="noopener noreferrer">Ver Diploma</a></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-section" id="contacto">
-            <div>
-                <!-- formulario contacto -->
+        <!-- sección contactos -->
+        <!-- <section class="page-section" id="contacto">
+            <h2>EScribime!</h2>
+            <div class="form-container">
+                <p class="title">Login</p>
+                <form class="form">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="">
+                        <div class="forgot">
+                            <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+                        </div>
+                    </div>
+                    <button class="sign">Sign in</button>
+                </form>
+                <div class="social-message">
+                    <div class="line"></div>
+                    <p class="message">Login with social accounts</p>
+                    <div class="line"></div>
+                </div>
+                <div class="social-icons">
+                    <button aria-label="Log in with Google" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                            <path
+                                d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button aria-label="Log in with Twitter" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                            <path
+                                d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button aria-label="Log in with GitHub" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                            <path
+                                d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <p class="signup">Don't have an account?
+                    <a rel="noopener noreferrer" href="#" class="">Sign up</a>
+                </p>
             </div>
-        </section>
+        </section> -->
     </main>
 
     <!-- Footer-->
@@ -310,10 +402,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{% static 'js/scripts.js' %}"></script>
-    <!-- SB Forms JS -->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 
 </html>
