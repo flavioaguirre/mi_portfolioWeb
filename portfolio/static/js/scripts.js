@@ -152,7 +152,7 @@ function handleButtonClick() {
             label.setAttribute('data-state', 'open');
             openText.style.display = 'block';
             checkbox.checked = false; // Reinicia el checkbox visualmente
-        }, 20000); // Duración de la animación (3.5s)
+        }, 15000); // Duración de la animación (3.5s)
     } else {
         // Si ya está en estado "open", no hacer nada más
         checkbox.checked = false; // Reinicia el checkbox visualmente
