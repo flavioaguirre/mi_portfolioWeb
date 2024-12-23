@@ -1,9 +1,21 @@
 from django.db import models
+from datetime import datetime
+import pytz
 
-class Certificados(models.Model):
-    titulo_curso = models.CharField(max_length=120)
-    fecha_obtencion = models.CharField(max_length=70)
-    imagen_curso= models.ImageField(upload_to='./static/assets/img/certificados', null=True, blank=True)
+# Define la zona horaria de tu país
+timezone = pytz.timezone('America/Buenos_Aires')  # Cambia esto a tu zona horaria
 
+# Obtén la hora actual en la zona horaria especificada
+local_time = datetime.now(timezone)
+
+# Formatea la hora
+formatted_time = local_time.strftime('%Y-%m-%d %H:%M:%S')
+
+class Mensajes(models.Model):
+    fecha_mensaje = models.DateTimeField(default=formatted_time)
+    nombre = models.CharField(max_length=30)
+    email = models.CharField(max_length=20)
+    mensaje = models.CharField(max_length=250)
+    
     def __str__(self):
-        return f'{self.titulo_curso}  ----  Obtenido el dia: {self.fecha_obtencion}'
+        return f'{self.nombre} te ha enviado un mensaje!'

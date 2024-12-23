@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -9,7 +9,7 @@
     <title>Flavio Aguirre | Python Developer</title>
     {% load static %}
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/perfil.png' %}" />
+    <link class="border-radius" rel="icon" type="image/x-icon" href="{% static 'assets/img/logos/icono-logo.png' %}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -130,11 +130,12 @@
                             <span class="bubble">Líder</span>
                             <span class="bubble">Empático</span>
                             <span class="bubble">Multidisciplinario</span>
+                            <span class="bubble">Orientacion al detalle</span>
                         </span>
                     </p>
                 </div>
                 <div class="container-img col-lg-4 reveal-top">
-                    <img src="{% static './assets/img/about/foto-perfil.png' %}" alt="Foto de perfil"
+                    <img src="{% static './assets/img/sobre_mi/foto-perfil.png' %}" alt="Foto de perfil"
                         class="img-perfil">
                 </div>
             </div>
@@ -147,24 +148,28 @@
                 <h2>Estos son algunos de los trabajos que puedo realizar</h2>
                 <div class="filter-buttons">
                     <button data-category="all">Todos</button>
-                    <button data-category="web">Desarrollo Web</button>
-                    <button data-category="design">Desarrollo de software</button>
                     <button data-category="data">Data Science</button>
+                    <button data-category="web">Desarrollo Web</button>
+                    <button data-category="design">Desarrollo de software</button>   
                 </div>
                 <div class="grid">
                     <!-- Proyecto 1 -->
                     <div class="project" data-category="web"
-                        data-description="A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript.A web development project using HTML, CSS, and JavaScript."
-                        data-technologies="HTML, CSS, JavaScript">
-                        <img src="{% static './assets/img/portfolio/1.jpg' %}" alt="Project">
-                        <h3>Web Project 1</h3>
+                        data-description="Proyecto final del Curso de Python 2023 en la plataforma 'CoderHouse'. Un blog de tecnología con un diseño minimalista y responsive. El cual cuanta con funciones CRUD completas y una funcion para enviar y consultar mensajes entre usuarios."
+                        data-technologies="Python, Django, HTML, CSS, Bootstrap"
+                        data-github="https://github.com/flavioaguirre/Tercera-pre-entrega-Aguirre"
+                        >
+                        <img src="{% static './assets/img/portfolio/img-proyecto1.png' %}" alt="Project">
+                        <h3>TechBlog</h3>
                     </div>
                     <!-- Proyecto 2 -->
-                    <div class="project" data-category="design"
-                        data-description="A graphic design project focusing on branding and logos."
-                        data-technologies="Photoshop, Illustrator">
-                        <img src="{% static './assets/img/portfolio/2.jpg' %}" alt="Project">
-                        <h3>Design Project 1</h3>
+                    <div class="project" data-category="web"
+                        data-description="Proyecto final del Curso de Desarrollo Web 2022 en la plataforma 'CoderHouse'. Un portfolio personal con un diseño minimalista y responsive."
+                        data-technologies="HTML, CSS, Sass, Bootstrap"
+                        data-github="https://github.com/flavioaguirre/miPortfolio"
+                        data-link="https://flavioaguirre.github.io/miPortfolio/">
+                        <img src="{% static './assets/img/portfolio/img-proyecto2.png' %}" alt="Project">
+                        <h3>Portfolio web</h3>
                     </div>
                     <!-- Proyecto 3 -->
                     <div class="project" data-category="data"
@@ -172,13 +177,6 @@
                         data-technologies="Python, Pandas">
                         <img src="{% static './assets/img/portfolio/3.jpg' %}" alt="Project">
                         <h3>Data Science Project 1</h3>
-                    </div>
-                    <!-- Proyecto 4 -->
-                    <div class="project" data-category="web"
-                        data-description="An advanced web application using React and Node.js."
-                        data-technologies="React, Node.js">
-                        <img src="{% static './assets/img/portfolio/4.jpg' %}" alt="Project">
-                        <h3>Web Project 2</h3>
                     </div>
                     <!-- Proyecto 5 -->
                     <div class="project" data-category="design"
@@ -204,7 +202,8 @@
                 <p class="p-2 mb-5" id="modal-description"></p>
                 <span class="tecnologías"><strong class="">Stack de tecnologías usadas</strong></span>
                 <div class="bubbles" id="modal-technologies"></div>
-                <a href="#" id="github-link" class="github-btn" target="_blank">Ver en GitHub</a>
+                <a id="github-link" href="#" class="github-btn" target="_blank">Ver en GitHub</a>
+                <a id="visit-link" href="#" class="visit-btn" target="_blank" style="display: none;">Visitar Website</a>
             </div>
         </section>
 
@@ -212,8 +211,8 @@
         <section class="page-section text-white" id="certificaciones">
             <div class="container">
                 <div class="text-center p-2">
-                    <h2 class="section-heading text-uppercase p-2 fs-1">Certificaciones</h2>
-                    <h3 class="section-subheading text-muted p-4">Estos son hasta la fecha todos mis diplomas.</h3>
+                    <h2 class="section-heading text-uppercase p-5 fs-1">Certificaciones</h2>
+                    <h3 class="section-subheading text-muted p-1 mb-5">Estos son hasta la fecha todos mis diplomas.</h3>
                 </div>
                 <div class="timeline" id="timeline">
                     <!-- Desarrollo Web -->
@@ -333,11 +332,19 @@
         <!-- sección contactos -->
         <section class="page-section" id="contacto">
             <div class="form-container reveal-top">
-                <p class="title">Dejame un mensaje</p>
-                <form class="form">
+                <p class="title reveal-top">Dejame un mensaje</p>
+                <form class="form" method="POST" action="">
+                    {% csrf_token %}
+                    {% if messages %}
+                    <ul class="messages" data-bs-dismiss="alert" role="alert">
+                        {% for message in messages %}
+                        <li class="{{ message.tags }}" >{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                     <div class="wave-group-container">
                         <div class="wave-group">
-                            <input required="" type="text" class="input">
+                            {{ form.nombre }}
                             <span class="bar"></span>
                             <label class="label">
                                 <span class="label-char" style="--index: 0">N</span>
@@ -349,7 +356,7 @@
                             </label>
                         </div>
                         <div class="wave-group mt-5">
-                            <input required="" type="text" class="input" id="">
+                            {{ form.email }}
                             <span class="bar"></span>
                             <label class="label">
                                 <span class="label-char" style="--index: 0">E</span>
@@ -359,8 +366,8 @@
                                 <span class="label-char" style="--index: 3">l</span>
                             </label>
                         </div>
-                        <div class="wave-group mt-5">
-                            <textarea required="" type="text" class="input"></textarea>
+                        <div class="wave-group mt-5 form-mensaje">
+                            {{ form.mensaje }}
                             <span class="bar"></span>
                             <label class="label">
                                 <span class="label-char" style="--index: 0">M</span>
@@ -373,13 +380,14 @@
                             </label>
                         </div>
                     </div>
-                    <button class="btn-enviar mt-5" type="submit">
+                    <button class="btn-enviar mt-4" type="submit">
                         <span class="texto-btn-enviar">Enviar</span>
                     </button>
                 </form>
+
                 <div class="social-message">
                     <div class="line"></div>
-                    <p class="message mt-3">Buscame en mis redes sociales</p>
+                    <p class="message mt-3">Seguime en</p>
                     <div class="line"></div>
                 </div>
             </div>
@@ -387,17 +395,17 @@
     </main>
 
     <!-- Footer-->
-    <footer class="footer py-4">
+    <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="social-icons">
+                <div class="social-icons reveal-top">
                     <div class="redes-container">
                         <a href="https://github.com/flavioaguirre" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-github redes"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/flavio-aguirre-12784a252/" target="_blank"
                             rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin redes px-3"></i>
+                            <i class="fa-brands fa-linkedin redes"></i>
                         </a>
                     </div>
                 </div>

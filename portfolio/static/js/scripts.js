@@ -86,6 +86,7 @@ const modalDescription = document.getElementById('modal-description');
 const modalTechnologies = document.getElementById('modal-technologies');
 const closeModalButton = document.querySelector('.close-btn');
 const githubLink = document.getElementById('github-link');
+const visitLink = document.getElementById('visit-link');
 
 document.querySelectorAll('.project').forEach(project => {
     project.addEventListener('click', () => {
@@ -107,6 +108,19 @@ document.querySelectorAll('.project').forEach(project => {
 
         modal.style.display = 'block';
         overlay.style.display = 'block';
+
+        // Set Visit link
+        const visitLinkData = project.getAttribute('data-link');
+        if (visitLinkData) {
+            visitLink.style.display = 'inline-block'; // Mostrar botón
+            visitLink.href = visitLinkData;
+        } else {
+            visitLink.style.display = 'none'; // Ocultar si no existe el enlace
+        }
+
+        overlay.style.display = 'block';
+
+        visitLink.href = project.getAttribute('data-link');
     });
 });
 
@@ -158,3 +172,11 @@ function handleButtonClick() {
         checkbox.checked = false; // Reinicia el checkbox visualmente
     }
 }
+
+// Modificar el tamaño del textarea en sección de contacto
+const input_mensaje = document.getElementById("id_mensaje");
+input_mensaje.setAttribute("rows", "3");
+
+// Alertas
+const alertList = document.querySelectorAll('.alert')
+const alerts = [...alertList].map(element => new bootstrap.Alert(element))
