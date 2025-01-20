@@ -29,12 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  #'RENDER' not in os.environ
-
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
@@ -91,16 +90,17 @@ WSGI_APPLICATION = 'portfolio_datascience.wsgi.application'
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "Aguantemate13.",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    "default": dj_database_url.config(
+        default='postgresql://postgres:Aguantemate13.@localhost:5432/postgres',
+        conn_max_age=600)
 }
 
+# "ENGINE": "django.db.backends.postgresql_psycopg2",
+# "NAME": "postgres",
+# "USER": "postgres",
+# "PASSWORD": "Aguantemate13.",
+# "HOST": "localhost",
+# "PORT": "5432",
 
 
 # Password validation
