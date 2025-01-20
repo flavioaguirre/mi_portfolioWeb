@@ -12900,7 +12900,7 @@ header .label .input:checked~.title:last-child {
 
 #sobre-mi .container-contenido {
     display: flex;
-    padding: 2%;
+    padding: 1.5%;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
@@ -13056,14 +13056,13 @@ header .label .input:checked~.title:last-child {
 
 /* ----- Estilos Seccion: "Proyectos" */
 .portfolio {
-    padding: 1em;
+    padding: 2.5em 5em;
     max-width: 1200px;
-
 }
 
 .portfolio h2 {
     padding: .5em;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
     margin-bottom: 2%;
     color: #eeee;
@@ -13099,7 +13098,7 @@ header .label .input:checked~.title:last-child {
     padding: 2%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.2em;
+    gap: 1.5em;
 }
 
 .project {

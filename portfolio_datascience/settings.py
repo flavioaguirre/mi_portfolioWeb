@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
-import dj_database_url  
+import dj_database_url
 
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True  #'RENDER' not in os.environ
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 
@@ -91,11 +91,14 @@ WSGI_APPLICATION = 'portfolio_datascience.wsgi.application'
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://mis_mensajes_postgresql_user:hHwpnIzoyhwz16eJ9I3zE5EnOqpDtFTC@dpg-ctjgbq1opnds73fpf6d0-a.virginia-postgres.render.com/mis_mensajes_postgresql',
-        conn_max_age= 600
-    )
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "Aguantemate13.",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
 }
 
 
