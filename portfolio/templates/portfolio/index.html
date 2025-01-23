@@ -81,6 +81,13 @@
                     rel="noopener noreferrer">
                     <i class="fa-brands fa-linkedin redes"></i>
                 </a>
+                <a href="https://discord.gg/zqaY25cZ" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        class="bi bi-discord redes mb-1" viewBox="0 0 16 16">
+                        <path
+                            d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                    </svg>
+                </a>
             </div>
         </div>
     </header>
@@ -145,27 +152,26 @@
         <!-- Sección "Mis Proyectos" -->
         <section class="page-section proyectos" id="proyectos">
             <div class="portfolio reveal-top">
-                <h2>Estos son algunos de los trabajos en los que estuve trabajando</h2>
-                <div class="filter-buttons">
-                    <button data-category="all">Todos</button>
-                    <button data-category="data">Data Science</button>
-                    <button data-category="web">Desarrollo Web</button>
+                <h2 class="mt-0 p-0 fs-4">Estos son algunos de los proyectos en los que estuve o estoy trabajando</h2>
+                <div class="filter-buttons p-1">
+                    <button class="" data-category="all">Todos</button>
+                    <button class="" data-category="data">Data Science</button>
+                    <button class="" data-category="web">Desarrollo Web</button>
                     <!-- <button data-category="design">Desarrollo de software</button>    -->
                 </div>
                 <div class="grid">
                     <!-- Proyecto 1 -->
                     <div class="project" data-category="web"
                         data-description="Proyecto final del Curso de Python 2023 en la plataforma 'CoderHouse'. Un blog de tecnología con un diseño minimalista y responsive. El cual cuanta con funciones CRUD completas y una funcion para enviar y consultar mensajes entre usuarios."
-                        data-technologies="Python, Django, HTML, CSS, Bootstrap"
-                        data-github="https://github.com/flavioaguirre/Tercera-pre-entrega-Aguirre"
-                        >
+                        data-technologies="Python, Django, HTML, CSS, Bootstrap, Git, GitHub"
+                        data-github="https://github.com/flavioaguirre/Tercera-pre-entrega-Aguirre">
                         <img src="{% static './assets/img/portfolio/img-proyecto1.png' %}" alt="Project">
                         <h3>TechBlog</h3>
                     </div>
                     <!-- Proyecto 2 -->
                     <div class="project" data-category="web"
                         data-description="Proyecto final del Curso de Desarrollo Web 2022 en la plataforma 'CoderHouse'. Un portfolio personal con un diseño minimalista y responsive."
-                        data-technologies="HTML, CSS, Sass, Bootstrap"
+                        data-technologies="HTML, CSS, Sass, Bootstrap, Git, GitHub"
                         data-github="https://github.com/flavioaguirre/miPortfolio"
                         data-link="https://flavioaguirre.github.io/miPortfolio/">
                         <img src="{% static './assets/img/portfolio/img-proyecto2.png' %}" alt="Project">
@@ -173,7 +179,7 @@
                     </div>
                     <!-- Proyecto 3 -->
                     <div class="project" data-category="data"
-                        data-description="En este proyecto se nos encarga realizar un análisis de datos sobre un dataset el cual tiene el hitorial de ventas de casas del condado king, en EEUU. Se nos pide realizar un modelo predictivo de regresión lineal para predecir el precio de una casa en base a sus características."
+                        data-description="Proyecto Final del curso de Analisis de datos con Python ofrecido por Coursera pero realizado por IBM. En este proyecto se nos encarga realizar un análisis de datos sobre un dataset el cual tiene el hitorial de ventas de casas del condado king, en EEUU. Se nos pide realizar un modelo predictivo de regresión lineal para predecir el precio de una casa en base a sus características."
                         data-technologies="Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebooks, scikit-learn"
                         data-github="https://github.com/flavioaguirre/proyecto_final_analisis_datos_python_IBM">
                         <img src="{% static './assets/img/portfolio/img-proyecto3.png' %}" alt="Project">
@@ -211,136 +217,137 @@
         <!-- Sección "Certificaciones"-->
         <section class="page-section text-white" id="certificaciones">
             <div class="container">
-                <div class="text-center p-2">
-                    <h2 class="section-heading text-uppercase p-5 fs-1">Certificaciones</h2>
-                    <h3 class="section-subheading text-muted p-1 mb-5">Estos son hasta la fecha todos mis diplomas.</h3>
+
+                <div class="text-center reveal-top">
+                    <h2>Estos son hasta la fecha todas mis certificaciones.</h2>
                 </div>
-                <div class="timeline" id="timeline">
-                    <!-- Desarrollo Web -->
-                    <div class='child reveal-top'>
-                        <div class='content'>
-                            <h4>Desarrollo web</h4>
-                            <p>
-                                Plataforma educativa: <a href="https://www.coderhouse.com/ar/"
-                                    target="_blank">CoderHouse</a><br>
-                                Fecha de obtención: 3/10/22
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coderhouse.com/ar/certificados/635e805f550fa6000e449e67?lang=es"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
+
+                <div id="carouselExampleCaptions" class="carousel slide p-5">
+                    <div class="carousel-indicators p-5 reveal-top mt-5">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                            aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                            aria-label="Slide 8"></button>
+                    </div>
+                    <div class="carousel-inner reveal-top">
+                        <!-- Certificado Python para ciencia de datos, IA y desarrollo -->
+                        <div class="carousel-item active">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Analisis de datos con python</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the first slide.</p>
+                                <button type="submit">
+                                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                                        Ver
+                                        Certificado
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Certificado Analisis de datos con python -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
+                        </div>
+                        <!-- Certificado Python desarrollo web -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
+                        </div>
+                        <!-- Certificado SQL y bases de datos con python -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
+                        </div>
+                        <!-- Certificado desarrollo web -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
+                        </div>
+                        <!-- Fundamentos de la ciencia de datos -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
+                        </div>
+                        <!-- Metodología de la ciencia de datos -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
+                        </div>
+                        <!-- Herramientas para la ciencia de datos -->
+                        <div class="carousel-item">
+                            <img src="{% static './assets/img/certificados/certificado_python.png' %}"
+                                class="d-block w-25" alt="...">
+                            <div class="carousel-caption d-none d-md-block w-75 h-75 mb-5 mx-5">
+                                <h5>Second slide label</h5>
+                                <p class="my-5 mx-5">Some representative placeholder content for the second slide.</p>
+                                <button type="submit"><a href="http://" target="_blank" rel="noopener noreferrer">Ver
+                                        Certificado</a></button>
+                            </div>
                         </div>
                     </div>
-                    <br>
-                    <!-- Python Developer Web -->
-                    <div class='child dos reveal-top'>
-                        <div class='content d-f'>
-                            <h4>Python orientado al desarrollo web</h4>
-                            <p>
-                                Plataforma educativa: <a href="https://www.coderhouse.com/ar/"
-                                    target="_blank">CoderHouse</a><br>
-                                Fecha de obtención: 8/11/23
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coderhouse.com/ar/certificados/65866718714341e821f68790?lang=es"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Python Developer Data Science -->
-                    <div class='child reveal-top'>
-                        <div class='content'>
-                            <h4>Python para ciencia de datos, inteligencia artificial y desarrollo</h4>
-                            <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
-                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
-                                    target="_blank">IBM</a><br>
-                                <strong>Fecha de obtención</strong>: 26/5/24
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coursera.org/account/accomplishments/verify/WB3APF9J97V7"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Fundamentos de la ciencia de datos -->
-                    <div class='child dos reveal-top'>
-                        <div class='content'>
-                            <h4>Fundamentos de la ciencia de datos</h4>
-                            <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
-                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
-                                    target="_blank">IBM</a><br>
-                                <strong>Fecha de obtención</strong>: 6/9/24
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coursera.org/account/accomplishments/verify/BABA835H4QTO"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Herramientas para la ciencia de datos -->
-                    <div class='child reveal-top'>
-                        <div class='content'>
-                            <h4>Herramientas para la ciencia de datos</h4>
-                            <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
-                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
-                                    target="_blank">IBM</a><br>
-                                <strong>Fecha de obtención</strong>: 18/10/24
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coursera.org/account/accomplishments/verify/EI10CBA8K9L0"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Metodología para la ciencia de datos -->
-                    <div class='child dos reveal-top'>
-                        <div class='content'>
-                            <h4>Metodología para la ciencia de datos</h4>
-                            <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
-                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
-                                    target="_blank">IBM</a><br>
-                                <strong>Fecha de obtención</strong>: 25/10/24
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coursera.org/account/accomplishments/verify/SOL4RNIBR330"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- SQL y base de datos con python para la ciencia de datos -->
-                    <div class='child  reveal-top'>
-                        <div class='content'>
-                            <h4>Bases de datos y SQL para la ciencia de los datos con Python</h4>
-                            <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
-                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
-                                    target="_blank">IBM</a><br>
-                                <strong>Fecha de obtención</strong>: 14/11/24
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coursera.org/account/accomplishments/verify/4266K31D0PNA"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
-                    <br>
-                    <div class='child  reveal-top'>
-                        <div class='content'>
-                            <h4>Análisis de datos con Python</h4>
-                            <p>
-                                <strong class="">Plataforma educativa</strong>: <a href="https://www.coursera.org/"
-                                    target="_blank">Coursera</a>, ofrecido por <a href="https://www.ibm.com/us-en"
-                                    target="_blank">IBM</a><br>
-                                <strong>Fecha de obtención</strong>: 13/01/25
-                            </p>
-                            <button class="bubble text-center"><a
-                                    href="https://www.coursera.org/account/accomplishments/verify/V3JWUCEMW11O"
-                                    target="_blank" rel="noopener noreferrer">Ver Certificado</a></button>
-                        </div>
-                    </div>
+
+                    <button class="carousel-control-prev reveal-top " type="button"
+                        data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next reveal-top" type="button"
+                        data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+
             </div>
         </section>
 
@@ -353,7 +360,7 @@
                     {% if messages %}
                     <ul class="messages" data-bs-dismiss="alert" role="alert">
                         {% for message in messages %}
-                        <li class="{{ message.tags }}" >{{ message }}</li>
+                        <li class="{{ message.tags }}">{{ message }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}
